@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 20px;
+  background: linear-gradient(
+    0deg,
+    rgba(100, 108, 255, 1) 35%,
+    rgba(209, 239, 245, 1) 100%
+  );
+  width: 350px;
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.weather-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+label {
+  font-weight: 800;
+  display: block;
+  text-align: left;
+  color: white;
+}
+
+.visually-hidden {
+  display: inline-block;
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1;
+  width: 1;
+  margin: -1;
+  padding: 0;
+  border: 0;
+}
+
+.form-input {
+  padding: 10px;
+  border-radius: 25px;
+  border: none;
+  margin-right: 12px;
+  background-color: rgba(100, 108, 255, 0.4);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  outline: none;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.form-input::placeholder {
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.btn {
+  background-color: var(--blue);
+  color: var(--white);
+  border-radius: 25px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  outline: none;
+}
+
+button:focus {
+  outline: 0 !important;
+  background: #ffffff;
+  color: #590ce5;
+}
+
+.current-weather {
+  height: 250px;
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.time,
+.weather-details,
+.temp {
+  border-radius: 10px;
+  background: linear-gradient(
+    rgba(194, 194, 240, 0.5) 35%,
+    rgba(209, 239, 245, 0) 100%
+  );
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  color: white;
+}
+
+.icon {
+  height: 180px;
+  grid-column: 2 / 4;
+  grid-row: 1 / 3;
+  display: Flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  /* border: 1px dotted red; */
+}
+
+.cloud {
+  position: relative;
+  background-color: #fff;
+  height: 40px;
+  width: 170px;
+  border-radius: 50px;
+  margin-top: 50px;
+  left: 10px;
+  animation: move 8s linear infinite;
+}
+
+.cloud:before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  left: 20px;
+  background: #fff;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.cloud:after {
+  content: '';
+  position: absolute;
+  top: -55px;
+  left: 60px;
+  background: #fff;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+}
+
+.sun {
+  position: absolute;
+  margin: 20px;
+  background-color: #ffe208;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  box-shadow: 0 0 30px 0 #f6edbd;
+  top: -2px;
+  left: 10px;
+}
+
+/* .moon {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  box-shadow: -1.5rem 1rem 0 0 #fff77e;
+} */
+
+/* .thunderbolt {
+  display: flex;
+}
+
+.thunderbolt .thundershape {
+  border: 8px solid rgba(0, 0, 0, 0);
+  border-bottom: 44px solid #ffdf00;
+  transform: rotateZ(-160deg);
+  padding: 4px;
+  width: 0;
+  height: 0;
+  margin: 0;
+  overflow: visible;
+  border-top: 0 solid;
+  border-radius: 0;
+  transform-origin: 50% 50% 0;
+}
+
+.thunderbolt .thundershape::after {
+  content: "";
+  top: -18px;
+  left: -12px;
+  border: 8px solid rgba(0, 0, 0, 0);
+  border-bottom: 50px solid #ffdf00;
+  transform: rotateZ(4deg);
+  padding: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+  margin: 0;
+  overflow: visible;
+  border-top: 0 solid;
+  border-radius: 0;
+  transform-origin: 50% 50% 0;
+} */
+
+.temp {
+  height: 180px;
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.current-temp,
+.weather-desc,
+.current-time {
+  margin: 5px;
+}
+
+.weather-details {
+  height: 80px;
+  grid-column: 1 / 4;
+  grid-row: 2 / 3;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+h4 {
+  margin: 10px;
+}
+
+p {
+  margin-top: 0px;
+}

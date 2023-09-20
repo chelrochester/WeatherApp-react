@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import GetLocation from './components/GetLocation';
-import CurrentWeather from './components/CurrentWeather';
-import WeatherDetails from './components/WeatherDetails';
+import GetLocation from './components/GetLocation/GetLocation';
+import CurrentWeather from './components/CurrentWeather/CurrentWeather';
+import WeatherDetails from './components/WeatherDetails/WeatherDetails';
 
 
 

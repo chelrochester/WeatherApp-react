@@ -1,7 +1,8 @@
 import React from 'react';
 import {useState} from 'react';
-import WeatherDetails from './WeatherDetails';
-import CurrentWeather from './CurrentWeather';
+import WeatherDetails from '../WeatherDetails/WeatherDetails';
+import CurrentWeather from '../CurrentWeather/CurrentWeather';
+import Button from './Button';
 
 
 
@@ -40,7 +41,7 @@ const GetLocation = () => {
           className="form-input"
         ></input>
       </div>
-      <button className="btn">Find City</button>
+      <Button />
     </div>
     </>
   );

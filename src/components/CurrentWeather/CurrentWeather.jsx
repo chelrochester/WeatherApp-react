@@ -17,9 +17,9 @@ const CurrentWeather = () => {
           
           </div>
           <div className="temp">
-            <CurrentTemp />
-            <CurrentTime />
-            <WeatherDesc />
+            <CurrentTemp temp="77"/>
+            <CurrentTime time="7:30"/>
+            <WeatherDesc description="partly cloudy"/>
           </div>
         </div>
     </>

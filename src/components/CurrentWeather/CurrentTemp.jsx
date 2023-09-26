@@ -1,7 +1,7 @@
-const CurrentTemp = () => {
+const CurrentTemp = (props) => {
     return(
         <>
-        <h1 className="current-temp">78°</h1>
+        <h1 className="current-temp">{props.temp}°</h1>
         </>
     );
 };

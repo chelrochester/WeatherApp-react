@@ -1,7 +1,7 @@
-const CurrentTime = () => {
+const CurrentTime = (props) => {
     return(
         <>
-        <p className="current-time">7:50p</p>
+        <p className="current-time">{props.time}p</p>
         </>
     );
 };

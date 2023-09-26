@@ -1,7 +1,7 @@
-const WeatherDesc = () => {
+const WeatherDesc = (props) => {
     return(
         <>
-        <h3 className="weather-desc">partly cloudy</h3>
+        <h3 className="weather-desc">{props.description}</h3>
         </>
     );
 };

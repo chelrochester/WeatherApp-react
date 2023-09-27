@@ -3,6 +3,7 @@ import {useState} from 'react';
 import WeatherDetails from '../WeatherDetails/WeatherDetails';
 import CurrentWeather from '../CurrentWeather/CurrentWeather';
 import Button from './Button';
+import Search from './Search';
 
 
 
@@ -29,6 +30,10 @@ const GetLocation = () => {
  
   // }
 
+  const hanldeOnSearchChange = (searchData) => {
+    console.log(searchData)
+  }
+
   return (
     <>
     <div className="weather-form">
@@ -41,6 +46,7 @@ const GetLocation = () => {
           className="form-input"
         ></input>
       </div>
+      <Search onSearchChange={handleOnSearchChange} />
       <Button />
     </div>
     </>

@@ -1,4 +1,4 @@
-const Thunderbolt = () => {
+const Thunderbolt = (props) => {
     return (
         <>
             <div className="thunderbolt">

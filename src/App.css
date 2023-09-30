@@ -70,10 +70,10 @@ label {
   outline: none;
 }
 
-button:focus {
-  outline: 0 !important;
+button:active {
   background: #ffffff;
   color: #590ce5;
+  outline: none !important;
 }
 
 .current-weather {

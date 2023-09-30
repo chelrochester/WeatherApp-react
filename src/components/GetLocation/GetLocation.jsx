@@ -2,15 +2,16 @@ import React from 'react';
 import {useState} from 'react';
 import { useEffect } from 'react';
 import Button from './Button';
+import Form from './Form';
 
 
 
 
 const GetLocation = () => {
   
-  const hanldeOnSearchChange = (searchData) => {
-    console.log(searchData) 
-  }
+  // const hanldeOnSearchChange = (searchData) => {
+  //   console.log(searchData) 
+  // }
 
   const cities = 'London'
 
@@ -28,16 +29,7 @@ const GetLocation = () => {
   return (
     <>
     <div className="weather-form">
-      <div className="form-control">
-        <label htmlFor="city" className="visually-hidden">
-        </label>
-        <input
-          id="city"
-          type="text"
-          className="form-input"
-        ></input>
-      </div>
-      
+      <Form />
       <Button />
     </div>
     </>

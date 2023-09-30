@@ -1,13 +1,15 @@
-export default function Form() {
+import { useState } from "react";
+
+function Form() {
     const [city, setCity] = useState("")
 
     function handleChange() {
-        
+        console.log(e.target.value)
     }
 
     return (
         <>
-            <div className="weather-form">
+            
                 <form className="form-control">
                     <label htmlFor="city" className="visually-hidden">
                     </label>
@@ -18,7 +20,9 @@ export default function Form() {
                     onChange={handleChange}
                     ></input>
                 </form>
-            </div>
+           
         </>
     )
 }
+
+export default Form;

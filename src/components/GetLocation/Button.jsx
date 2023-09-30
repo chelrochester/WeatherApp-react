@@ -6,7 +6,7 @@ const Button = () => {
 
     return(
         <>
-            <button className="btn" onClick={handleClick}>Find City</button>
+            <button className="btn" onClick={handleClick}>Get Weather</button>
         </>
     );
 };

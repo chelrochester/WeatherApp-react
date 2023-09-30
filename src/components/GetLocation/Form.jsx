@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function Form() {
-    const [city, setCity] = useState("")
+    const [formData, setFormData] = useState(null)
 
-    function handleChange() {
+    function handleChange(e) {
         console.log(e.target.value)
     }
 

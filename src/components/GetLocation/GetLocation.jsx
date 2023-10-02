@@ -22,7 +22,7 @@ const GetLocation = () => {
   useEffect(() => {
     fetch(search)
       .then(response => (response.json()))
-      .then(data => (console.log(data)))
+      .then(data => (console.log('data', data)))
       .catch(error => {console.log(error)});
   }, [])
   

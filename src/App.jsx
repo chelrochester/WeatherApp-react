@@ -1,29 +1,46 @@
 import { useEffect, useState } from 'react';
-import './App.css';
+import { QueryClient, QueryClientProvider, useQuery } from 'react-query';
 import GetLocation from './components/GetLocation/GetLocation';
 import CurrentWeather from './components/CurrentWeather/CurrentWeather';
 import WeatherDetails from './components/WeatherDetails/WeatherDetails';
+import './App.css';
 
+const queryClient= new QueryClient()
 
+export default function App() {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Body />
+    </QueryClientProvider>
+  )
+}
 
-
-function App() {
+function Body() {
   
   const Api_Key = ``;
   const endpoint = `https://api.weatherapi.com/v1/current.json?key=${Api_Key}&q=London&aqi=no`;
   
-  // can these all use one state since they update together?  How would that look?
-  // const [latitude, setLatitude] = useState(null);
-  // const [longitude, setLongitude] = useState(null);
-  // const [city, setCity] = useState('');
-  // const [tempurature, setTempurature] = useState(null);
+  const fetchData = async () => {
+    // Simulate an API call or fetch data from your backend
+    const response = await fetch(endpoint);
+    if (!response.ok) {
+      throw new Error('Failed to fetch data');
+    }
+    return response.json();
+  };
+
+  const { isLoading, isError, data, error } = useQuery('weatherData', fetchData)
+
+  if (isLoading) return 'Loading...'
+
+  if (isError) return 'An error has occurred: ' + error.message
   
-  useEffect(() => {
-    fetch(endpoint)
-      .then(response => (response.json()))
-      .then(data => (console.log(data)))
-      .catch(error => {console.log(error)});
-  }, [])
+  // useEffect(() => {
+  //   fetch(endpoint)
+  //     .then(response => (response.json()))
+  //     .then(data => (console.log(data)))
+  //     .catch(error => {console.error(error)});
+  // }, [])
 
   return (
     <>
@@ -35,4 +52,3 @@ function App() {
   );
 }
 
-export default App;

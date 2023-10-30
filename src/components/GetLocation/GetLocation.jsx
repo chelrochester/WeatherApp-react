@@ -1,30 +1,25 @@
 import React from 'react';
-import {useState} from 'react';
-import { useEffect } from 'react';
+import { useState , useEffect } from 'react';
+import axios from 'axios';
 import Button from './Button';
 import Form from './Form';
 
+  
+  const Api_Key = ``;
+  const endpoint = `https://api.weatherapi.com/v1/current.json?`;
+  
+  export const getWeatherData = async () => {
+    try {
+      const {data} = await axios.get(endpoint + `key=${Api_Key}&q=${city}`);
+      return data;
+    } catch {
+      throw error;
+    }
+  }
 
 
 
 const GetLocation = () => {
-  
-  // const hanldeOnSearchChange = (searchData) => {
-  //   console.log(searchData) 
-  // }
-
-  const cities = 'London'
-
-  const Api_Key = ``;
-  const search = `https://api.weatherapi.com/v1/search.json?key=${Api_Key}&q=${cities}&aqi=no`;
-  
-
-  useEffect(() => {
-    fetch(search)
-      .then(response => (response.json()))
-      .then(data => (console.log('data', data)))
-      .catch(error => {console.log(error)});
-  }, [])
   
   return (
     <>

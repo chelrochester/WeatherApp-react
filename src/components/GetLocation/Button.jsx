@@ -1,12 +1,14 @@
+import { useEffect } from "react";
+
 const Button = () => {
 
-    function handleClick() {
-        console.log("clicked!")
-      }
-
+    
+      useEffect(() => {
+        
+      }, []);
     return(
         <>
-            <button className="btn" onClick={handleClick}>Get Weather</button>
+            <button className="btn" onClick={() => getData()}>Get Weather</button>
         </>
     );
 };

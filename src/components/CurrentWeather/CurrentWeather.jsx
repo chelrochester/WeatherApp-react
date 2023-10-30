@@ -5,10 +5,11 @@ import CurrentTemp from './CurrentTemp';
 import CurrentTime from './CurrentTime';
 import WeatherDesc from './WeatherDesc';
 
+
 const CurrentWeather = () => {
   return (
     <>
-    <div className="weather-location">London</div>
+    <div className="weather-location">london</div>
         <div className="current-weather">
           <div className="icon">
             <Sun />

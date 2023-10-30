@@ -17,7 +17,7 @@ function Form() {
                     id="city"
                     type="text"
                     className="form-input"
-                    onChange={handleChange}
+                    onChange={(e) => setCity(e.target.value)}
                     ></input>
                 </form>
            

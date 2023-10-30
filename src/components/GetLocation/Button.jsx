@@ -2,13 +2,13 @@ import { useEffect } from "react";
 
 const Button = () => {
 
-    
-      useEffect(() => {
-        
-      }, []);
+    function onClick() {
+        console.log("Button clicked");
+    }
+     
     return(
         <>
-            <button className="btn" onClick={() => getData()}>Get Weather</button>
+            <button className="btn" onClick={onClick}>Get Weather</button>
         </>
     );
 };

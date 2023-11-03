@@ -4,28 +4,32 @@ import Sun from '../Icons/sun';
 import CurrentTemp from './CurrentTemp';
 import CurrentTime from './CurrentTime';
 import WeatherDesc from './WeatherDesc';
-
+import GetWeather from './GetWeather'; // Import the modified GetWeather component
 
 const CurrentWeather = () => {
+  // Render the GetWeather component to fetch data
   return (
-    <>
-    <div className="weather-location">london</div>
-        <div className="current-weather">
-          <div className="icon">
-            <Sun />
-            <Cloud />
-  
-          
+    <GetWeather>
+      {({ city, temperature }) => (
+        <>
+          <div className="weather-location">
+            <p>{city}</p>
           </div>
-          <div className="temp">
-            <CurrentTemp temp="77"/>
-            <CurrentTime time="7:30"/>
-            <WeatherDesc description="partly cloudy"/>
+          <div className="current-weather">
+            <div className="icon">
+              <Sun />
+              <Cloud />
+            </div>
+            <div className="temp">
+              <CurrentTemp temp={temperature} />
+              <CurrentTime time="7:30" />
+              <WeatherDesc description="partly cloudy" />
+            </div>
           </div>
-        </div>
-    </>
+        </>
+      )}
+    </GetWeather>
   );
 };
-
 
 export default CurrentWeather;

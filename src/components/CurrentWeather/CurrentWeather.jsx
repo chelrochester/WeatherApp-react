@@ -6,29 +6,26 @@ import CurrentTime from './CurrentTime';
 import WeatherDesc from './WeatherDesc';
 import GetWeather from './GetWeather'; // Import the modified GetWeather component
 
-const CurrentWeather = () => {
+const CurrentWeather = (props) => {
   // Render the GetWeather component to fetch data
+  console.log('current weather props.temp', props.temp)
   return (
-    <GetWeather>
-      {({ city, temperature }) => (
+    
         <>
           <div className="weather-location">
-            <p>{city}</p>
+            <p>{props.city}</p>
           </div>
           <div className="current-weather">
             <div className="icon">
-              <Sun />
-              <Cloud />
+              <img alt={props.currentCondition} src={props.icon} /> 
             </div>
             <div className="temp">
-              <CurrentTemp temp={temperature} />
+              <CurrentTemp temp={props.temperature} />
               <CurrentTime time="7:30" />
-              <WeatherDesc description="partly cloudy" />
+              <WeatherDesc description={props.currentCondition} />
             </div>
           </div>
         </>
-      )}
-    </GetWeather>
   );
 };
 

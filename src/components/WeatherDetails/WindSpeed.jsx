@@ -1,9 +1,9 @@
-const WindSpeed = () => {
+const WindSpeed = (props) => {
     return(
       <>
         <div className="wind-speed">
           <h4>wind speed</h4>
-          <p>40mph</p>
+          <p>{props.WindSpeed}mph</p>
         </div>
       </>
     );

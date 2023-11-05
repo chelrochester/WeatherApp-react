@@ -29,7 +29,7 @@ export default function App() {
         setTemperature(data.current.temp_f);
         setCurrentCondition(data.current.condition.text);
         setIcon(data.current.condition.icon)
-        setWindSpeed(data.current.gust_mph);
+        setWindSpeed(data.current.wind_mph);
         setHumidity(data.current.humidity);
         setFeelsLike(data.current.feelslike_f)
         console.log(response.data);

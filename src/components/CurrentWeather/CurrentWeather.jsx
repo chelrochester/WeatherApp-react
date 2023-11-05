@@ -21,7 +21,7 @@ const CurrentWeather = (props) => {
             </div>
             <div className="temp">
               <CurrentTemp temp={props.temperature} />
-              <CurrentTime time="7:30" />
+              {/* <CurrentTime time="7:30" /> */}
               <WeatherDesc description={props.currentCondition} />
             </div>
           </div>

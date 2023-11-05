@@ -1,9 +1,9 @@
-const FeelsLike = () => {
+const FeelsLike = (props) => {
     return(
       <>
         <div className="feels-like">
           <h4>feels like</h4>
-          <p>75°</p>
+          <p>{props.feelsLike}°</p>
         </div>
       </>
     );

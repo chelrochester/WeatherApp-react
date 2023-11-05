@@ -1,10 +1,10 @@
 
-const Humidity = () => {
+const Humidity = (props) => {
     return(
       <>
         <div className="humidity">
           <h4>humidity</h4>
-          <p>20%</p>
+          <p>{props.humidity}%</p>
         </div>
       </>
     );

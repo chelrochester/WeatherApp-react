@@ -3,7 +3,7 @@ const WindSpeed = (props) => {
       <>
         <div className="wind-speed">
           <h4>wind speed</h4>
-          <p>{props.WindSpeed}mph</p>
+          <p>{props.windSpeed}mph</p>
         </div>
       </>
     );

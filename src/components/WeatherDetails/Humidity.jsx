@@ -1,3 +1,8 @@
+import PropTypes from 'prop-types';
+
+const propTypes = {
+  humidity: PropTypes.number
+};
 
 const Humidity = (props) => {
     return(
@@ -9,5 +14,8 @@ const Humidity = (props) => {
       </>
     );
 };
+
+Humidity.propTypes = propTypes;
+
 
 export default Humidity;

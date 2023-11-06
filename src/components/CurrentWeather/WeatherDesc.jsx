@@ -1,3 +1,9 @@
+import PropTypes from 'prop-types';
+
+const propTypes = {
+  description: PropTypes.string
+};
+
 const WeatherDesc = (props) => {
     return(
         <>
@@ -5,5 +11,7 @@ const WeatherDesc = (props) => {
         </>
     );
 };
+
+WeatherDesc.propTypes = propTypes;
 
 export default WeatherDesc;

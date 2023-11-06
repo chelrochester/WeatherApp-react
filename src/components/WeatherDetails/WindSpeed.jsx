@@ -1,3 +1,9 @@
+import PropTypes from 'prop-types';
+
+const propTypes = {
+  windSpeed: PropTypes.number
+};
+
 const WindSpeed = (props) => {
     return(
       <>
@@ -8,5 +14,8 @@ const WindSpeed = (props) => {
       </>
     );
 };
+
+WindSpeed.propTypes = propTypes;
+
 
 export default WindSpeed;

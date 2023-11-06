@@ -10,7 +10,7 @@ import './App.css';
 export default function App() {
   
   const [city, setCity] = useState('New York, NY');
-  const [temperature, setTemperature] = useState('');
+  const [temperature, setTemperature] = useState();
   const [currentCondition, setCurrentCondition] = useState();
   const [icon, setIcon] = useState();
   const [windSpeed, setWindSpeed] = useState();
@@ -26,6 +26,7 @@ export default function App() {
       .get(endpoint)
       .then(response => {
         const data = response.data;
+        setCity(data.location.name)
         setTemperature(data.current.temp_f);
         setCurrentCondition(data.current.condition.text);
         setIcon(data.current.condition.icon)

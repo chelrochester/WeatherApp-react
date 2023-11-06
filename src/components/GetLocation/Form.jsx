@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 function Form() {
+    // eslint-disable-next-line no-unused-vars
     const [formData, setFormData] = useState(null)
 
     function handleChange(e) {

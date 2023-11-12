@@ -69,13 +69,20 @@ label {
   border-radius: 25px;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   outline: none;
-
+  font-size: 14px;
 }
 
 button:active {
   background: #ffffff;
   color: #590ce5;
   outline: none !important;
+}
+
+.weather-location {
+  margin-top: 35px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
 }
 
 .current-weather {
@@ -207,9 +214,9 @@ button:active {
 }
 
 .current-temp,
-.weather-desc,
-.current-time {
+.weather-desc {
   margin: 5px;
+  margin-top: 25px;
 }
 
 .weather-details {

@@ -1,35 +1,31 @@
+import React, { useState } from 'react';
 import useWeatherData from './hooks/useWeatherData';
 import GetLocation from './components/GetLocation/GetLocation';
 import CurrentWeather from './components/CurrentWeather/CurrentWeather';
 import WeatherDetails from './components/WeatherDetails/WeatherDetails';
 import './App.css';
 
-
-
 export default function App() {
-  // eslint-disable-next-line
-  const { city, temperature, currentCondition, icon, windSpeed, humidity, feelsLike, setCity } = useWeatherData('New York, NY');
+    const [city, setCity] = useState('New York, NY');
+    const { temperature, currentCondition, icon, windSpeed, humidity, feelsLike } = useWeatherData(city);
 
-  return (
-      
+    const handleCityUpdate = (newCity) => {
+        setCity(newCity);
+    };
+
+    return (
         <>
-          <GetLocation />
-          <CurrentWeather 
-            temperature={temperature}
-            city={city}
-            currentCondition={currentCondition}
-            icon={icon}
-          />
-          <WeatherDetails 
-            windSpeed={windSpeed}
-            humidity={humidity}
-            feelsLike={feelsLike}
-          />
+            <GetLocation onUpdateCity={handleCityUpdate} />
+            <CurrentWeather
+                temperature={temperature}
+                currentCondition={currentCondition}
+                icon={icon}
+            />
+            <WeatherDetails
+                windSpeed={windSpeed}
+                humidity={humidity}
+                feelsLike={feelsLike}
+            />
         </>
-    
-  )
+    );
 }
-
-
-
-  

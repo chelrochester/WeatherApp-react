@@ -1,29 +1,39 @@
 import { useState } from "react";
+import PropTypes from 'prop-types';
 
-function Form() {
-    // eslint-disable-next-line no-unused-vars
-    const [formData, setFormData] = useState(null)
+const propTypes = {
+    onSubmit: PropTypes.string,
+    city: PropTypes.string
+  };
 
-    function handleChange(e) {
-        console.log(e.target.value)
+function Form(props) {
+    const [city, setCity] = useState("");
+
+    function onSubmitHandler(e) {
+        setCity(city);
+        e.preventDefault();
     }
+    
 
     return (
-        <>
-            
-                <form className="form-control">
-                    <label htmlFor="city" className="visually-hidden">
-                    </label>
-                    <input
+        <>    
+            <form className="form-control" onSubmit={onSubmitHandler}>
+                <label 
+                    htmlFor="city" 
+                    className="visually-hidden"
+                ></label>
+                <input
                     id="city"
                     type="text"
                     className="form-input"
-                    onChange={handleChange}
-                    ></input>
-                </form>
-           
+                    value={props.city}
+                    onChange={(e) => setCity(e.target.value)}
+                ></input>
+            </form>   
         </>
-    )
+    );
 }
+
+Form.propTypes = propTypes;
 
 export default Form;

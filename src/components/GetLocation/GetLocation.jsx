@@ -1,25 +1,23 @@
 import PropTypes from 'prop-types';
-
 import Button from './Button';
 import Form from './Form';
 
 const propTypes = {
-  city: PropTypes.string
+    onUpdateCity: PropTypes.func,
+    city: PropTypes.string
 };
 
-const GetLocation = (props) => {
-  
-  return (
-    <>
-    <div className="weather-form">
-      <Form city={props.city}/>
-      <Button />
-    </div>
-    </>
-  );
+const GetLocation = ({ onUpdateCity, city }) => {
+    return (
+        <>
+            <div className="weather-form">
+                <Form onSubmit={onUpdateCity} city={city} />
+                <Button onSubmit={onUpdateCity} city={city} />
+            </div>
+        </>
+    );
 };
 
 GetLocation.propTypes = propTypes;
 
 export default GetLocation;
-

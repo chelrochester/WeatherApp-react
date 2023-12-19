@@ -1,19 +1,19 @@
-import { useState } from "react";
 import PropTypes from 'prop-types';
 
 const propTypes = {
-    onSubmit: PropTypes.string,
+    onSubmit: PropTypes.func,
     city: PropTypes.string
-  };
+};
 
-function Form(props) {
-    const [city, setCity] = useState("");
+function Form({ onSubmit, city }) {
 
     function onSubmitHandler(e) {
-        setCity(city);
         e.preventDefault();
+        console.log("Submitting city:", city);
+        onSubmit(city);
     }
-    
+
+    console.log("Rendering with city:", city);
 
     return (
         <>    
@@ -26,8 +26,8 @@ function Form(props) {
                     id="city"
                     type="text"
                     className="form-input"
-                    value={props.city}
-                    onChange={(e) => setCity(e.target.value)}
+                    value={city}
+                    onChange={(e) => onSubmit(e.target.value)}
                 ></input>
             </form>   
         </>

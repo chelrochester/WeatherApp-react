@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const useWeatherData = (initialCity) => {
-    const [city, setCity] = useState(initialCity);
+const useWeatherData = () => {
+    const [city, setCity] = useState('');
     const [temperature, setTemperature] = useState();
     const [currentCondition, setCurrentCondition] = useState();
     const [icon, setIcon] = useState();
@@ -11,7 +11,7 @@ const useWeatherData = (initialCity) => {
     const [feelsLike, setFeelsLike] = useState();
   
     useEffect(() => {
-      const Api_Key = `b0d061c771af4a18bb2145219230211`;
+      const Api_Key = `40b089c4e8224c23a60142015231112`;
       const endpoint = `http://api.weatherapi.com/v1/current.json?key=${Api_Key}&q=${city}&aqi=no`;
   
       axios
@@ -31,6 +31,11 @@ const useWeatherData = (initialCity) => {
           console.log(error);
         });
     }, [city]);
+
+    const handleCityUpdate = (newCity) => {
+      setCity(newCity);
+      console.log('handleCity')
+  };
   
     return {
       city,
@@ -40,7 +45,7 @@ const useWeatherData = (initialCity) => {
       windSpeed,
       humidity,
       feelsLike,
-      setCity,
+      handleCityUpdate,
     };
   };
 

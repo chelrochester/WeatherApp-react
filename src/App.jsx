@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import useWeatherData from './hooks/useWeatherData';
 import GetLocation from './components/GetLocation/GetLocation';
 import CurrentWeather from './components/CurrentWeather/CurrentWeather';
@@ -6,16 +5,23 @@ import WeatherDetails from './components/WeatherDetails/WeatherDetails';
 import './App.css';
 
 export default function App() {
-    const [city, setCity] = useState('New York, NY');
-    const { temperature, currentCondition, icon, windSpeed, humidity, feelsLike } = useWeatherData(city);
+    
+    const {
+        city,
+        temperature,
+        currentCondition,
+        icon,
+        windSpeed,
+        humidity,
+        feelsLike,
+        handleCityUpdate
+    } = useWeatherData();
 
-    const handleCityUpdate = (newCity) => {
-        setCity(newCity);
-    };
+   
 
     return (
         <>
-            <GetLocation onUpdateCity={handleCityUpdate} />
+            <GetLocation onUpdateCity={handleCityUpdate} city={city} />
             <CurrentWeather
                 temperature={temperature}
                 currentCondition={currentCondition}

@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const useWeatherData = (initialCity) => {
-    const [city, setCity] = useState(initialCity);
+const useWeatherData = () => {
+    const [city, setCity] = useState('');
     const [temperature, setTemperature] = useState();
     const [currentCondition, setCurrentCondition] = useState();
     const [icon, setIcon] = useState();
@@ -31,6 +31,11 @@ const useWeatherData = (initialCity) => {
           console.log(error);
         });
     }, [city]);
+
+    const handleCityUpdate = (newCity) => {
+      setCity(newCity);
+      console.log('handleCity')
+  };
   
     return {
       city,
@@ -40,7 +45,7 @@ const useWeatherData = (initialCity) => {
       windSpeed,
       humidity,
       feelsLike,
-      setCity,
+      handleCityUpdate,
     };
   };
 

@@ -15,6 +15,7 @@ export default function App() {
         humidity,
         feelsLike,
         cityInput,
+        submitted,
         handleCityUpdate,
         handleClick,
     } = useWeatherData();
@@ -30,6 +31,7 @@ export default function App() {
                 cityInput={cityInput}
             />
             <CurrentWeather
+                submitted={submitted}
                 cityInput={cityInput}
                 city={city}
                 temperature={temperature}

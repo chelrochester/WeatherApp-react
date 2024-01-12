@@ -10,6 +10,7 @@ const useWeatherData = () => {
     const [humidity, setHumidity] = useState();
     const [feelsLike, setFeelsLike] = useState();
     const [cityInput, setCityInput] = useState();
+    const [submitted, setSubmitted] = useState();
   
     useEffect(() => {
       const Api_Key = ``;
@@ -35,13 +36,14 @@ const useWeatherData = () => {
 
     function handleCityUpdate(e) {
       e.preventDefault();
-      setCityInput(false);
+      setSubmitted(false);
       setCityInput(e.target.value);
       console.log('handleCity');
   }
 
   function handleClick() {
-    setCityInput(true);
+    setSubmitted(true);
+    setCity(cityInput);
   }
   
     return {
@@ -55,6 +57,7 @@ const useWeatherData = () => {
       handleCityUpdate,
       handleClick,
       cityInput,
+      submitted,
     };
   };
 

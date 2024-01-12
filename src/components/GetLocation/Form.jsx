@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 const propTypes = {
     handleChange: PropTypes.func,
     city: PropTypes.string,
-    cityInput: PropTypes.func
+    cityInput: PropTypes.func,
+    onSubmit: PropTypes.func,
 };
 
-function Form({ handleChange, city, cityInput }) {
+function Form({ handleChange, cityInput, onSubmit }) {
 
     // function onSubmitHandler(e) {
     //     e.preventDefault();
@@ -14,11 +15,11 @@ function Form({ handleChange, city, cityInput }) {
     //     onSubmit(city);
     // }
 
-    console.log("Rendering with city:", city);
+    console.log("Rendering with city:", cityInput);
 
     return (
         <>    
-            <form className="form-control" autoComplete="off" onSubmit={handleChange}>
+            <form className="form-control" autoComplete="off" onSubmit={onSubmit}>
                 <label 
                     htmlFor="city" 
                     className="visually-hidden"

@@ -16,7 +16,7 @@ const GetLocation = ({ handleChange, onClick, city, cityInput }) => {
     return (
         <>
             <div className="weather-form">
-                <Form handleChange={handleChange} city={city} cityInput={cityInput} />
+                <Form handleChange={handleChange} onSubmit={onClick} city={city} cityInput={cityInput} />
                 <Button onClick={onClick} city={city} />
             </div>
         </>

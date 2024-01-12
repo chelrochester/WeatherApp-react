@@ -14,18 +14,28 @@ export default function App() {
         windSpeed,
         humidity,
         feelsLike,
-        handleCityUpdate
+        cityInput,
+        handleCityUpdate,
+        handleClick,
     } = useWeatherData();
 
    
 
     return (
         <>
-            <GetLocation onUpdateCity={handleCityUpdate} city={city} />
+            <GetLocation 
+                handleChange={handleCityUpdate} 
+                onClick={handleClick} 
+                city={city} 
+                cityInput={cityInput}
+            />
             <CurrentWeather
+                cityInput={cityInput}
+                city={city}
                 temperature={temperature}
                 currentCondition={currentCondition}
                 icon={icon}
+                
             />
             <WeatherDetails
                 windSpeed={windSpeed}

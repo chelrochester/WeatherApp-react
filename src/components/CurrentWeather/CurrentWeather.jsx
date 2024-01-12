@@ -8,6 +8,7 @@ import WeatherDesc from './WeatherDesc';
 const propTypes = {
   currentCondition: PropTypes.string,
   temperature: PropTypes.number,
+  cityInput: PropTypes.func,
   city: PropTypes.string,
   icon: PropTypes.string
 };
@@ -19,7 +20,7 @@ const CurrentWeather = (props) => {
     
         <>
           <div className="weather-location">
-            <p>{props.city}</p>
+            <p>{props.cityInput || "What's the weather like today"}</p>
           </div>
           <div className="current-weather">
             <div className="icon">

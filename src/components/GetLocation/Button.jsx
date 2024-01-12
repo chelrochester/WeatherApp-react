@@ -1,20 +1,19 @@
 import PropTypes from 'prop-types';
 
 const propTypes = {
-    onSubmit: PropTypes.func,
-    city: PropTypes.string,
+    onClick: PropTypes.func,
 };
 
-const Button = ({ onSubmit, city }) => {
-    function handleSearch(e) {
-        e.preventDefault();
-        console.log('hello');
-        onSubmit(city);
-    }
+const Button = ({ onClick }) => {
+    // function handleSearch(e) {
+    //     e.preventDefault();
+    //     console.log('hello');
+    //     onSubmit(city);
+    // }
 
     return (
         <>
-            <button className="btn" onClick={handleSearch}>
+            <button className="btn" onClick={onClick}>
                 Get Weather
             </button>
         </>

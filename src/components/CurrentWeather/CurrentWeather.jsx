@@ -14,7 +14,6 @@ const propTypes = {
 };
 
 const CurrentWeather = (props) => {
-  // Render the GetWeather component to fetch data
   
   return (
     

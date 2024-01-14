@@ -9,12 +9,6 @@ const propTypes = {
 
 function Form({ handleChange, cityInput, onSubmit }) {
 
-    // function onSubmitHandler(e) {
-    //     e.preventDefault();
-    //     console.log("Submitting city:", city);
-    //     onSubmit(city);
-    // }
-
     console.log("Rendering with city:", cityInput);
 
     return (

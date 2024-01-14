@@ -11,7 +11,7 @@
 - custom hooks
 - axios
 
-  ### useSate
+### useSate
     const [city, setCity] = useState('');
     const [cityInput, setCityInput] = useState();
     const [submitted, setSubmitted] = useState();
@@ -29,44 +29,44 @@
   }
 
 
-  ### props
+### props
   
-import PropTypes from 'prop-types';
-
-const propTypes = {
-  currentCondition: PropTypes.string,
-  temperature: PropTypes.number,
-  submitted: PropTypes.func,
-  cityInput: PropTypes.string,
-  icon: PropTypes.string
-};
-
-const CurrentWeather = (props) => {
+  import PropTypes from 'prop-types';
   
-  return (
+  const propTypes = {
+    currentCondition: PropTypes.string,
+    temperature: PropTypes.number,
+    submitted: PropTypes.func,
+    cityInput: PropTypes.string,
+    icon: PropTypes.string
+  };
+  
+  const CurrentWeather = (props) => {
     
-        <>
-          <div className="weather-location">
-            <p>{props.submitted ? props.cityInput : "What's the weather like today"}</p>
-          </div>
-          <div className="current-weather">
-            <div className="icon">
-              <img alt={props.currentCondition} src={props.icon} /> 
+    return (
+      
+          <>
+            <div className="weather-location">
+              <p>{props.submitted ? props.cityInput : "What's the weather like today"}</p>
             </div>
-            <div className="temp">
-              <CurrentTemp temp={props.temperature} />
-              <WeatherDesc description={props.currentCondition} />
+            <div className="current-weather">
+              <div className="icon">
+                <img alt={props.currentCondition} src={props.icon} /> 
+              </div>
+              <div className="temp">
+                <CurrentTemp temp={props.temperature} />
+                <WeatherDesc description={props.currentCondition} />
+              </div>
             </div>
-          </div>
-        </>
-  );
-};
+          </>
+    );
+  };
 
 CurrentWeather.propTypes = propTypes;
 
-  ### custom hooks
+### custom hooks
 
-const {
+  const {
         city,
         temperature,
         currentCondition,
@@ -80,7 +80,7 @@ const {
         handleClick,
     } = useWeatherData();
   
-  ### axios
+### axios
   
   axios
         .get(endpoint)

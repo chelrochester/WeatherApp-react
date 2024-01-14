@@ -5,11 +5,6 @@ const propTypes = {
 };
 
 const Button = ({ onClick }) => {
-    // function handleSearch(e) {
-    //     e.preventDefault();
-    //     console.log('hello');
-    //     onSubmit(city);
-    // }
 
     return (
         <>

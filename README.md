@@ -2,7 +2,7 @@
 
 ## Landing Page
 
-[!Screenshot of langing page](![image](https://github.com/chelrochester/WeatherApp-react/assets/50529205/73c95e7c-72da-4b08-8d7e-412f689da4fe)(![image](https://github.com/chelrochester/WeatherApp-react/assets/50529205/611df7c9-961b-44db-9c87-d376c30aca72)
+[!Screenshot of langing page](![image](https://github.com/chelrochester/WeatherApp-react/assets/50529205/611df7c9-961b-44db-9c87-d376c30aca72)
 
 ## What I've learned
 

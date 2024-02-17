@@ -6,12 +6,12 @@
 
 ## What I've learned
 
-- useSate
+- useState
 - props
 - custom hooks
 - axios
 
-### useSate
+### useState
     const [city, setCity] = useState('');
     const [cityInput, setCityInput] = useState();
     const [submitted, setSubmitted] = useState();

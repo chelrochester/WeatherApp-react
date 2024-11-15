@@ -14,7 +14,7 @@ const useWeatherData = () => {
   
     useEffect(() => {
       const Api_Key = `40b089c4e8224c23a60142015231112`;
-      const endpoint = `http://api.weatherapi.com/v1/current.json?key=${Api_Key}&q=${city}&aqi=no`;
+      const endpoint = `https://api.weatherapi.com/v1/current.json?key=${Api_Key}&q=${city}&aqi=no`;
   
       axios
         .get(endpoint)

@@ -13,7 +13,9 @@ const useWeatherData = () => {
     const [submitted, setSubmitted] = useState();
   
     useEffect(() => {
-      const Api_Key = ``;
+      const Api_Key = import.meta.env.VITE_API_KEY;
+      console.log(import.meta.env.VITE_API_KEY);
+
       const endpoint = `https://api.weatherapi.com/v1/current.json?key=${Api_Key}&q=${city}&aqi=no`;
   
       axios

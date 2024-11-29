@@ -14,6 +14,10 @@ const useWeatherData = () => {
   
     useEffect(() => {
       const Api_Key = import.meta.env.VITE_API_KEY;
+      if (!Api_Key) {
+        console.error("API Key is missing!");
+        return;
+      }
       console.log(import.meta.env.VITE_API_KEY);
 
       const endpoint = `https://api.weatherapi.com/v1/current.json?key=${Api_Key}&q=${city}&aqi=no`;

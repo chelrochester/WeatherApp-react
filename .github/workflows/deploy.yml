@@ -1,0 +1,35 @@
+name: Deploy Vite App
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '16' # or the version you need
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Inject environment variables
+        env:
+          VITE_API_KEY: ${{ secrets.VITE_API_KEY }}
+        run: |
+          echo "VITE_API_KEY=${VITE_API_KEY}" >> .env.production
+
+      - name: Build Vite app
+        run: npm run build
+
+      - name: Deploy to Hosting Service
+        run: |
+          # Example: deploy files to Netlify, AWS S3, etc.
+          echo "Deployment step here."
